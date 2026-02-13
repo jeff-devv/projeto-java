@@ -41,6 +41,22 @@ public class Main {
 
             double res = fat + carb + ptn;
 
+            System.out.println("Nível de atividade física:");
+            System.out.println("Muito ativo digite (1): ");
+            System.out.println("Pouco ativo digite (2): ");
+            System.out.println("Nada ativo digite (3): ");
+
+            double ativo = sc.nextDouble();
+
+            if(ativo == 1){
+                tbh = tbh * 1.8;
+            } else if (ativo == 2) {
+                tbh = tbh * 1.5;
+            }else {
+                tbh = tbh * 1.2;
+            }
+
+
             if (res<tbh) {
                 System.out.println("voê esta em defcit calórico de " + (res - tbh) + " saudável");
             } else if ((fat*0.2)>res){
@@ -50,6 +66,8 @@ public class Main {
             }else{
                 System.out.println("voê esta em superrafcit calórico de " + (res - tbh) + " saudável");
             }
+
+
 
         }else {
              tbm=447.593 + (9.247 * kg) + (3.098 * altura) - (4.330 * anos);
@@ -71,6 +89,21 @@ public class Main {
             fat = fat * 9;
 
             double res = fat + carb + ptn;
+            System.out.println("Nível de atividade física:");
+            System.out.println("Muito ativo digite (1): ");
+            System.out.println("Pouco ativo digite (2): ");
+            System.out.println("Nada ativo digite (3): ");
+
+            double ativo = sc.nextDouble();
+
+            if(ativo == 1){
+                tbm = tbm * 1.8;
+            } else if (ativo == 2) {
+                tbm = tbm * 1.5;
+            }else {
+                tbm = tbm * 1.2;
+            }
+
 
             if (res<tbh){
                 System.out.println("voê esta em defcit calórico de " + (res - tbm));
