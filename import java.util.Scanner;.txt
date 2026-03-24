@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class Main {
+public class Executar {
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
@@ -10,32 +10,28 @@ public class Main {
         int escolha = 0;
         boolean valido = false;
 
-        while (!valido){
-            System.out.println("Escolha sua operação:" +"\n" +
-                    "Soma = 1" + "\n"+
-                    "Subtração = 2" + "\n"+
-                    "Multiplicação = 3" + "\n"+
-                    "Divisão = 4" + "\n"+
-                    "Área do Triangulo = 5" + "\n"+
-                    "Área do Quadrado = 6" + "\n");
-            try{
-                escolha = sc.nextInt();
-                valido = true;
-            }catch (InputMismatchException e){
-                System.out.println("Inválido. Tente novamente");
-                sc.nextLine();
-            }
-        }
+        while (true) {
+            System.out.println("Escolha sua operação:\n" +
+                    "Soma = 1\n" +
+                    "Subtração = 2\n" +
+                    "Multiplicação = 3\n" +
+                    "Divisão = 4\n" +
+                    "Área do Triangulo = 5\n" +
+                    "Área do Quadrado = 6\n");
 
-        while (escolha > 6 || escolha < 1){
-            System.out.println("Valor invalido! Digite novamente");
-            System.out.println("Soma = 1" + "\n"+
-                    "Subtração = 2" + "\n"+
-                    "Multiplicação      = 3" + "\n"+
-                    "Divisão          = 4" + "\n"+
-                    "Área do Triangulo = 5" + "\n"+
-                    "Área do Quadrado  = 6" + "\n");
-            escolha = sc.nextInt();
+            try {
+                escolha = sc.nextInt();
+
+                if (escolha >= 1 && escolha <= 6) {
+                    break; // valor válido → sai do loop
+                } else {
+                    System.out.println("Valor inválido! Digite um número entre 1 e 6.\n");
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida! Digite um número.\n");
+                sc.nextLine(); // limpa o buffer
+            }
         }
 
         while (escolha != 7){
